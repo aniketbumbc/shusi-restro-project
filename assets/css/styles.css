@@ -87,8 +87,27 @@ img {
 }
 
 /*=============== THEME ===============*/
-
+.nav__buttons {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}
+.change-theme {
+  font-size: 1.25rem;
+  color: var(--title-color);
+  cursor: pointer;
+  transition: color 0.4s;
+}
 /*========== Variables Dark theme ==========*/
+
+body.dark-theme {
+  --first-color: hsl(19, 64%, 58%);
+  --first-color-alt: hsl(19, 64%, 54%);
+  --title-color: hsl(19, 24%, 85%);
+  --text-color: hsl(19, 16%, 65%);
+  --body-color: hsl(19, 12%, 8%);
+  --container-color: hsl(19, 10%, 10%);
+}
 
 /*========== 
     Color changes in some parts of 
@@ -721,7 +740,111 @@ img {
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
+@media screen and (max-width: 340px) {
+  .container {
+    margin-inline: 1rem;
+  }
+  .section {
+    padding-block: 4rem 1rem;
+  }
+
+  .home__title {
+    font-size: 2rem;
+  }
+
+  .home__leaf-1 {
+    top: 5rem;
+  }
+
+  .home__leaf-2 {
+    bottom: 0;
+  }
+
+  .about__leaf {
+    bottom: 8rem;
+  }
+  .newsletter__content {
+    padding: 6rem 1rem 2rem;
+  }
+  .newsletter__form {
+    flex-direction: column;
+    background: none;
+    row-gap: 1rem;
+  }
+  .newsletter__input {
+    width: initial;
+    padding: 1rem;
+    border-radius: 4rem;
+  }
+
+  .newsletter__button {
+    justify-content: center;
+  }
+  .footer__content {
+    gap: 1.5rem;
+  }
+}
 
 /* For medium devices */
 
+@media screen and (min-width: 576px) {
+  .home__container,
+  .about__container,
+  .recently__container,
+  .newsletter__content {
+    grid-template-columns: 0.7fr;
+    justify-content: center;
+  }
+
+  .footer__content {
+    grid-template-columns: repeat(3, max-content);
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .nav {
+    column-gap: 3rem;
+  }
+
+  .nav__toggle,
+  .nav__close,
+  .nav__img-1,
+  .nav__img-2 {
+    display: none;
+  }
+
+  .nav__list {
+    flex-direction: row;
+    column-gap: 3rem;
+  }
+  .nav__menu {
+    margin-left: auto;
+  }
+
+  .popular__container {
+    grid-template-columns: repeat(2, 250px);
+  }
+  .footer__content {
+    grid-template-columns: repeat(4, max-content);
+  }
+}
+
 /* For large devices */
+
+@media screen and (min-width: 1024px) {
+  .section {
+    padding-block: 7rem 1.5rem;
+  }
+  .section__subtitle {
+    margin-bottom: 0.75rem;
+  }
+  .nav {
+    height: calc(var(--header-height) + 1.5rem);
+  }
+
+  .home__container {
+    position: relative;
+    grid-template-columns: 480px 500px;
+    padding-block: 7rem 3rem;
+  }
+}
