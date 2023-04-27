@@ -70,3 +70,16 @@ window.addEventListener('scroll', scrollActive);
 /*=============== DARK LIGHT THEME ===============*/
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
+
+const scrollReveal = ScrollReveal({
+  origin: 'top',
+  distance: '60px',
+  duration: 2500,
+  dealy: 400,
+});
+
+scrollReveal.reveal(`.home__img,.newsletter__container,.footer`);
+scrollReveal.reveal(`.home__data`, { origin: 'bottom' });
+scrollReveal.reveal(`.about__data, .recently__data`, { origin: 'left' });
+scrollReveal.reveal(`.about__img, .recently__img`, { origin: 'right' });
+scrollReveal.reveal(`.popular__card`, { interval: 1000 });
